@@ -184,7 +184,7 @@
   /* =============================
      Seção Projetos
      ============================= */
-  #projetos .container {
+   #projetos .container {
     max-width: 1200px;
     margin: auto;
     display: grid;
@@ -198,6 +198,8 @@
     margin-bottom: 40px;
     font-size: 2.8rem;
     color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   
   .project-card {
@@ -207,6 +209,8 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background var(--transition-speed) ease;
     text-align: center;
+    overflow: hidden;
+    position: relative;
   }
   
   .project-card:hover {
@@ -220,12 +224,36 @@
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .project-card:hover h3 {
+    color: var(--text-light);
   }
   
   .project-card p {
     font-size: 1rem;
     line-height: 1.4;
+    margin-bottom: 15px;
   }
+  
+  .project-card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 15px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  
+  .project-card .btn:hover {
+    background: #5e3370;
+    transform: scale(1.1);
+  }
+  
   
   /* =============================
      Seção Conhecimentos
