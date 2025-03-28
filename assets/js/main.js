@@ -16,6 +16,35 @@ navLinks.forEach(link => {
   });
 });
 
+
+
+// Função para criar formas roxas paradas
+const createStationaryPurpleShapes = () => {
+  // Cria um container para as formas paradas
+  const container = document.createElement('div');
+  container.id = 'purple-shapes-container';
+  document.body.appendChild(container);
+
+  // Define a quantidade de formas que deseja criar
+  const shapeCount = 5;
+  
+  for (let i = 0; i < shapeCount; i++) {
+    const shape = document.createElement('div');
+    shape.classList.add('purple-shape');
+    // Posicionamento aleatório dentro da tela
+    shape.style.left = Math.random() * 100 + '%';
+    shape.style.top = Math.random() * 100 + '%';
+    container.appendChild(shape);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Chama a função para criar as formas roxas paradas
+  createStationaryPurpleShapes();
+  
+  // ... o restante do seu código de inicialização ...
+});
+
 // Cria objetos roxos animados
 const createMovingPurpleObjects = () => {
   // Cria um container para os objetos (opcional)
@@ -48,8 +77,13 @@ const createMovingPurpleObjects = () => {
   }
 };
 
+
+
+
 // Chama a função para criar e animar os objetos roxos
 createMovingPurpleObjects();
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Efeito Typed.js no título principal

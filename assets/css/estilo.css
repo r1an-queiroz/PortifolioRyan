@@ -105,6 +105,8 @@
   border-radius: 50%;
   opacity: 0.7;
 }
+
+
   
   #home::before {
     content: "";
@@ -397,6 +399,7 @@
     max-width: 1200px;
     margin: auto;
     padding: 60px 5%;
+    margin-top: 0%;
   }
   
   #timeline h2 {
@@ -479,6 +482,7 @@
     max-width: 800px;
     margin: auto;
     text-align: center;
+    margin-top: 0%;
   }
   
   #contato h2 {
