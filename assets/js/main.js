@@ -1,3 +1,56 @@
+// Navegação suave para links do menu
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+    // Atualiza a classe "active" no menu
+    navLinks.forEach(item => item.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+// Cria objetos roxos animados
+const createMovingPurpleObjects = () => {
+  // Cria um container para os objetos (opcional)
+  const container = document.createElement('div');
+  container.id = 'purple-objects-container';
+  // Permite que os objetos não interfiram na interação do usuário
+  container.style.pointerEvents = 'none';
+  document.body.appendChild(container);
+
+  // Quantidade de objetos a criar
+  const objectCount = 10;
+  
+  for (let i = 0; i < objectCount; i++) {
+    const obj = document.createElement('div');
+    obj.classList.add('purple-object');
+    // Posicionamento inicial aleatório
+    obj.style.left = Math.random() * 100 + '%';
+    obj.style.top = Math.random() * 100 + '%';
+    container.appendChild(obj);
+    
+    // Animação com GSAP: movimento aleatório contínuo com efeito "yoyo"
+    gsap.to(obj, {
+      x: Math.random() * 200 - 100,  // deslocamento aleatório horizontal
+      y: Math.random() * 200 - 100,  // deslocamento aleatório vertical
+      duration: 4 + Math.random() * 2, // duração entre 4 e 6 segundos
+      repeat: -1,                  // repete infinitamente
+      yoyo: true,                  // volta ao ponto inicial
+      ease: "sine.inOut"
+    });
+  }
+};
+
+// Chama a função para criar e animar os objetos roxos
+createMovingPurpleObjects();
+
 document.addEventListener("DOMContentLoaded", () => {
   // Efeito Typed.js no título principal
   const typedOptions = {

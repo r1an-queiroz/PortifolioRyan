@@ -83,6 +83,28 @@
     position: relative;
     overflow: hidden;
   }
+
+  /* Contêiner para os objetos roxos */
+#purple-objects-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Fica atrás do conteúdo da #home */
+  pointer-events: none; /* Não interfere no clique do usuário */
+  overflow: hidden; /* Impede objetos de passarem da borda */
+}
+
+/* Estilo dos objetos roxos */
+.purple-object {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.7;
+}
   
   #home::before {
     content: "";
@@ -168,6 +190,7 @@
     border: 5px solid var(--primary-color);
     object-fit: cover;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    margin-left: 0%;
   }
   
   .profile-pic:hover {
@@ -280,7 +303,7 @@
   
   .knowledge-column {
     flex: 1;
-    min-width: 280px;
+    min-width: 500px;
   }
   
   .knowledge-item {
@@ -306,7 +329,7 @@
     width: 0;
     background: var(--primary-color);
     border-radius: 5px;
-    animation: fillBar 2s forwards;
+    /* animation: fillBar 2s forwards; */
   }
   
   @keyframes fillBar {
@@ -467,6 +490,17 @@
   .contact-list {
     list-style: none;
   }
+  .contact-list a {
+    color: var(--primary-color);      /* Usa a cor roxa principal */
+    text-decoration: none;           /* Remove o sublinhado */
+    font-weight: 600;                /* Deixa um pouco mais “forte” */
+    transition: color 0.3s ease;     /* Suaviza a mudança de cor no hover */
+  }
+  
+  .contact-list a:hover {
+    color: var(--text-light);        /* Fica branco ao passar o mouse */
+    text-decoration: underline;      /* Sublinha no hover, se quiser */
+  }
   
   .contact-list li {
     font-size: 1.1rem;
@@ -501,6 +535,10 @@
     transform: translateY(30px);
     animation: revealAnimation 0.8s forwards;
   }
+
+
+
+
   
   @keyframes revealAnimation {
     to { opacity: 1; transform: translateY(0); }
