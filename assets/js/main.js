@@ -1,3 +1,63 @@
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("particles-js2")) {
+    particlesJS("particles-js2", {
+      particles: {
+        number: {
+          value: 50,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: { value: "#8e44ad" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#8e44ad",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: { opacity: 1 }
+          },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  }
+});
+
+
+
+
 // Navegação suave para links do menu
 const navLinks = document.querySelectorAll('nav ul li a');
 navLinks.forEach(link => {
@@ -22,8 +82,9 @@ navLinks.forEach(link => {
 const createStationaryPurpleShapes = () => {
   // Cria um container para as formas paradas
   const container = document.createElement('div');
-  container.id = 'purple-shapes-container';
+  container.id = 'purple-objects-container';
   document.body.appendChild(container);
+  
 
   // Define a quantidade de formas que deseja criar
   const shapeCount = 5;
@@ -230,3 +291,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+function createGradientBubbles() {
+  const bubbleContainer = document.createElement("div");
+  bubbleContainer.id = "light-mode-bubbles";
+  document.body.appendChild(bubbleContainer);
+
+  for (let i = 0; i < 10; i++) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    bubble.style.top = `${Math.random() * 100}%`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    bubbleContainer.appendChild(bubble);
+  }
+}
+
+// Cria bolhas somente se o modo claro for ativado
+if (document.body.classList.contains("light-mode")) {
+  createGradientBubbles();
+}
+
