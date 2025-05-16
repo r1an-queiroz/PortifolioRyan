@@ -1,75 +1,26 @@
-body.light-mode,
-body.light-mode section,
-body.light-mode .project-card,
-body.light-mode #header,
-body.light-mode footer,
-body.light-mode input,
-body.light-mode textarea,
-body.light-mode h3 {
-  background-color: white !important;
-  color: var(--text-dark) !important;
+
+
+body {
+  background-color: var(--bg-dark);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(142, 68, 173, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(142, 68, 173, 0.15), transparent 40%);
+  background-attachment: fixed;
+  color: var(--text-light);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
-
-body.light-mode .project-card ,
-body.light-mode .contact-list a,
-body.light-mode nav ul li a {
-  color: var(--text-dark) !important;
-}
-
-body.light-mode .project-card:hover {
-  background: #eaeaea !important;
-}
-
-body.light-mode .knowledge-bar {
-  background: #ccc !important;
-}
-
-body.light-mode .fill {
-  background: var(--primary-color) !important;
-}
-
-body.light-mode p,
-body.light-mode span,
-body.light-mode .about-text p,
-body.light-mode #home p,
-body.light-mode .project-card p,
-body.light-mode footer,
-body.light-mode .contact-list li {
-  color: black !important;
-}
-
-
-body.light-mode #particles-js2,
-body.light-mode #light-mode-bubbles {
-  display: block !important;
-  opacity: 1;
-}
-
-body.light-mode .project-card,
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-  background-color: #f0f0f0 !important;
-  color: #222 !important;
-  border: 1px solid #ccc !important;
-}
-
-body.light-mode .project-card:hover {
-  background-color: #e2e2e2 !important;
-}
-
-body.light-mode .contact-form button {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-body.light-mode footer {
-  background-color: #f2f2f2 !important;
-  color: #444 !important;
-}
-
-
 
 :root {
+  --hover-light: var(--hover-light);
+  --hover-light-2: var(--hover-light-2);
+  --form-bg: var(--form-bg);
+  --form-border: var(--form-border);
+  --footer-bg-light: var(--footer-bg-light);
+  --footer-text-light: var(--footer-text-light);
+  --text-strong: var(--text-strong);
+  --knowledge-bar-light: var(--form-border);
   --primary-color: #8e44ad;
   --bg-dark: #121212;
   --bg-secondary: #1e1e1e;
@@ -80,24 +31,70 @@ body.light-mode footer {
   --font-base: 'Poppins', sans-serif;
 }
 
+
+
+body.light-mode .project-card ,
+body.light-mode .contact-list a footer,
+body.light-mode nav ul li a {
+  color: var(--text-dark);
+}
+
+body.light-mode .project-card:hover {
+  background: var(--hover-light);
+}
+
+body.light-mode .knowledge-bar {
+  background: var(--form-border);
+}
+
+body.light-mode .fill {
+  background: var(--primary-color);
+}
+
+body.light-mode p,
+body.light-mode span,
+body.light-mode .about-text p,
+body.light-mode #home p,
+body.light-mode .project-card p,
+body.light-mode footer,
+body.light-mode .contact-list li {
+  color: black;
+}
+
+body.light-mode #particles-js2,
+body.light-mode #light-mode-bubbles {
+  display: block;
+  opacity: 1;
+}
+
+body.light-mode .project-card,
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  background-color: var(--form-bg);
+  color: var(--text-strong);
+  border: 1px solid var(--form-border);
+}
+
+body.light-mode .project-card:hover {
+  background-color: var(--hover-light-2);
+}
+
+body.light-mode .contact-form button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body.light-mode footer {
+  background-color: var(--footer-bg-light);
+  color: var(--footer-text-light);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-base);
   color: white;
-}
-
-body {
-  background-color: var(--bg-dark);
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(142, 68, 173, 0.15), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(142, 68, 173, 0.15), transparent 40%);
-  background-attachment: fixed;
-  color: var(--text-light);
-  scroll-behavior: smooth;
-  line-height: 1.6;
-  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #header {
@@ -150,16 +147,17 @@ section {
   padding: 100px 5% 80px;
 }
 
-#particles-js {
+#particles-js2 {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
-  background-color: #121212; /* ou a cor que você quiser */
-  pointer-events: none;
+  pointer-events: auto;
+  background: transparent;
 }
+
+
 
 
 #purple-objects-container {
@@ -172,7 +170,6 @@ section {
   pointer-events: none;
   overflow: hidden;
 }
-
 
 .purple-object {
   position: absolute;
@@ -187,7 +184,7 @@ section {
   display: inline-block;
   font-weight: 700;
   color: var(--primary-color);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .hero-title {
@@ -214,7 +211,7 @@ section {
   vertical-align: bottom;
   margin-left: 0.25rem;
   color: var(--primary-color);
-  font-size: 4rem;
+  font-size: 2rem;
   animation: blink 0.7s infinite;
 }
 
@@ -269,76 +266,124 @@ section {
   text-align: justify;
 }
 
-/* Projetos */
-#projetos .container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  justify-items: center;
-}
-
-#projetos h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 2.8rem;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
+/*projetos*/
 .project-card {
-  background: var(--bg-secondary);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 20px 20px 30px;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+  cursor: pointer;
   text-align: center;
   overflow: hidden;
-  position: relative;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.6);
-  background: var(--primary-color);
-  color: #fff;
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
 
 .project-card h3 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
   color: var(--primary-color);
-  transition: color var(--transition-speed) ease;
+  transition: color 0.4s ease;
 }
 
 .project-card:hover h3 {
-  color: var(--text-light);
+  color: #fff;
 }
 
 .project-card p {
-  font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: inherit;
+  min-height: 80px;
 }
 
+/* Botão com gradiente animado */
 .project-card .btn {
   display: inline-block;
-  padding: 10px 15px;
-  margin-top: 15px;
-  background: var(--primary-color);
-  color: var(--text-light);
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(270deg, #8e44ad, #6a1b9a, #8e44ad);
+  background-size: 600% 600%;
+  border-radius: 35px;
+  box-shadow: 0 6px 15px rgba(142, 68, 173, 0.4);
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+  transition: background-position 3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  border: none;
 }
 
 .project-card .btn:hover {
-  background: #5e3370;
+  background-position: 100% 0;
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.8);
+  transform: scale(1.15);
+}
+
+.ver-mais-btn {
+  display: block;
+  margin: 40px auto 0 auto;
+  padding: 15px 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(270deg, #8e44ad, #6a1b9a, #8e44ad);
+  background-size: 600% 600%;
+  border-radius: 35px;
+  box-shadow: 0 6px 15px rgba(142, 68, 173, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-position 3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.ver-mais-btn:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.9);
   transform: scale(1.1);
 }
+
+.extra-project {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.extra-project.show {
+  opacity: 1;
+  max-height: 1000px; /* valor grande suficiente para conteúdo */
+  margin-top: 20px;   /* espaçamento visual quando aberto */
+}
+
 
 /* Conhecimentos */
 #conhecimentos .container {
@@ -619,33 +664,12 @@ body.light-mode nav ul li a:hover {
     right: auto !important;
   }
 }
-:root {
-  --primary-color: #8e44ad;
-  --bg-dark: #121212;
-  --bg-secondary: #1e1e1e;
-  --bg-light: #f5f5f5;
-  --text-light: #fff;
-  --text-dark: #333;
-  --transition-speed: 0.3s;
-  --font-base: 'Poppins', sans-serif;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-base);
-}
-
-body {
-  background-color: var(--bg-dark);
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(142, 68, 173, 0.15), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(142, 68, 173, 0.15), transparent 40%);
-  background-attachment: fixed;
-  color: var(--text-light);
-  scroll-behavior: smooth;
-  line-height: 1.6;
 }
 
 #header {
@@ -1082,7 +1106,7 @@ section {
 .contact-form input,
 .contact-form textarea {
   background: var(--bg-secondary);
-  border: 1px solid #444;
+  border: 1px solid var(--footer-text-light);
   border-radius: 8px;
   padding: 12px;
   font-size: 1rem;
@@ -1112,7 +1136,6 @@ section {
   background: #5e3370;
 }
 
-
 /* Rodapé */
 footer {
   text-align: center;
@@ -1120,7 +1143,7 @@ footer {
   background: var(--bg-secondary);
   font-size: 0.9rem;
   color: var(--text-dark);
-  
+
 }
 
 /* Reveal */
@@ -1214,16 +1237,6 @@ body.light-mode nav ul li a:hover {
   }
 }
 
-#particles-js2 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background: #121212; /* fundo escuro */
-  pointer-events: none;
-}
 
 
 #light-mode-bubbles {
