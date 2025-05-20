@@ -175,33 +175,5 @@ particlesJS("particles-js2", {
   carregarProjetosCustomizados();
   
   
-  document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("uhz4ZaoN1DBkNZgfa");
   
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      status.textContent = "Enviando...";
-  
-      const params = {
-        nome: document.getElementById("nome").value,
-        email: document.getElementById("email").value,
-        mensagem: document.getElementById("mensagem").value,
-      };
-  
-      emailjs.send("service_rujd3af", "template_xen8cyd", params)
-        .then(() => {
-          status.textContent = "Mensagem enviada com sucesso! ✅";
-          status.style.color = "lime";
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Erro ao enviar:", error);
-          status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
-          status.style.color = "red";
-        });
-    });
-  });
   
