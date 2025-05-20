@@ -139,3 +139,69 @@ particlesJS("particles-js2", {
   });
   
   
+  const projetosCustomizados = [
+    {
+      nome: "",
+      descricao: "",
+      imagem: "",
+      link: ""
+    },
+    {
+      nome: "",
+      descricao: "",
+      imagem: "",
+      link: ""
+    }
+  ];
+  
+  function carregarProjetosCustomizados() {
+    const container = document.getElementById("github-projects");
+  
+    projetosCustomizados.forEach(proj => {
+      const card = document.createElement("div");
+      card.classList.add("project-card");
+  
+      card.innerHTML = `
+        <img src="${proj.imagem}" alt="${proj.nome}" class="project-image" />
+        <h3>${proj.nome}</h3>
+        <p>${proj.descricao}</p>
+        <a href="${proj.link}" class="btn" target="_blank">Ver Projeto</a>
+      `;
+  
+      container.appendChild(card);
+    });
+  }
+  
+  carregarProjetosCustomizados();
+  
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("uhz4ZaoN1DBkNZgfa");
+  
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      status.textContent = "Enviando...";
+  
+      const params = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        mensagem: document.getElementById("mensagem").value,
+      };
+  
+      emailjs.send("service_rujd3af", "template_xen8cyd", params)
+        .then(() => {
+          status.textContent = "Mensagem enviada com sucesso! ✅";
+          status.style.color = "lime";
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar:", error);
+          status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
+          status.style.color = "red";
+        });
+    });
+  });
+  
