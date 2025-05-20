@@ -237,34 +237,33 @@
     <section id="contato" class="dark-block-1 reveal">
       <div class="container">
         <h2>Contato</h2>
-        <p>Entre em contato preenchendo o formulário abaixo ou me chamando pelas redes sociais.</p>
-    
-        <div class="contact-form-wrapper">
-          <!-- Ícones sociais dentro do formulário -->
-          <div class="social-icons">
-            <a href="mailto:ryanqueiroz4568@gmail.com" target="_blank" class="icon-link">
+        <p>Interessado em desenvolver algo incrível? Entre em contato!</p>
+
+        <div class="contact-wrapper">
+          <ul class="contact-list">
+            <li>
               <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ryan-queiroz-888125297/" target="_blank" class="icon-link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/r1an-queiroz" target="_blank" class="icon-link">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-    
-          <!-- Formulário -->
-          <form id="contact-form" class="contact-form">
-            <div class="form-group">
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Seu e-mail" required />
-            </div>
-            <div class="form-group">
-              <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar Mensagem</button>
+              <a href="mailto:ryanqueiroz4568@gmail.com">ryanqueiroz4568@gmail.com</a>
+            </li>
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/5513991729399" target="_blank">(13) 99172-9399</a>
+            </li>
+            <li>
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ryan-queiroz-888125297/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+              <i class="fab fa-git"></i>
+              <a href="https://github.com/r1an-queiroz" target="_blank">github</a>
+            </li>
+          </ul>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar mensagem</button>
           </form>
         </div>
       </div>
@@ -280,5 +279,8 @@
 
   <!-- Scripts do Projeto -->
   <script src="assets/js/main.js" defer></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  
 </body>
 </html>
