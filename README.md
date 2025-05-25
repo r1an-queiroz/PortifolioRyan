@@ -19,9 +19,13 @@ Este site foi desenvolvido com foco em:
 ## 📁 Estrutura de pastas
 
 ├── index.html
+
 ├── estilo.css
+
 ├── main.js
+
 ├── assets/
+
 │ └── images/
 
 
